@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: erpbpm-api
+    env: docker
+    dockerfilePath: ./deployment/backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: erpbpm-db
+          property: connectionString
+    healthCheckPath: /health
+
+databases:
+  - name: erpbpm-db
+    databaseName: erpbpm
+    user: erpbpm_user

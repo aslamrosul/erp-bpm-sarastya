@@ -1,0 +1,193 @@
+import { createBrowserRouter } from "react-router";
+import LoginPage from "../features/auth/pages/LoginPage";
+import DashboardPage from "./pages/DashboardPage";
+import UserManagementPage from "./pages/UserManagementPage";
+import BPMWorkflowStudioPage from "./pages/BPMWorkflowStudioPage";
+import BPMApprovalInboxPage from "./pages/BPMApprovalInboxPage";
+import HRMEmployeeListPage from "./pages/HRMEmployeeListPage";
+import CRMPipelinePage from "./pages/CRMPipelinePage";
+import ProjectManagementPage from "./pages/ProjectManagementPage";
+import LeaveManagementPage from "./pages/LeaveManagementPage";
+import NotificationCenterPage from "./pages/NotificationCenterPage";
+
+// Teamwork
+import TeamworkCalendarPage from "./pages/TeamworkCalendarPage";
+import TeamworkDocumentsPage from "./pages/TeamworkDocumentsPage";
+
+// CRM
+import CRMLeadsPage from "./pages/CRMLeadsPage";
+import CRMCustomersPage from "./pages/CRMCustomersPage";
+import CRMActivitiesPage from "./pages/CRMActivitiesPage";
+
+// Sales
+import SalesQuotationPage from "./pages/SalesQuotationPage";
+import SalesOrderPage from "./pages/SalesOrderPage";
+import SalesReportPage from "./pages/SalesReportPage";
+
+// Purchases
+import PurchaseRequestPage from "./pages/PurchaseRequestPage";
+import PurchaseOrderPage from "./pages/PurchaseOrderPage";
+import SupplierPage from "./pages/SupplierPage";
+
+// Invoicing
+import CustomerInvoicePage from "./pages/CustomerInvoicePage";
+import SupplierInvoicePage from "./pages/SupplierInvoicePage";
+import PaymentPage from "./pages/PaymentPage";
+
+// Accounting
+import JournalEntriesPage from "./pages/JournalEntriesPage";
+import ChartOfAccountsPage from "./pages/ChartOfAccountsPage";
+import FinancialReportPage from "./pages/FinancialReportPage";
+import AccountingBudgetPage from "./pages/AccountingBudgetPage";
+
+// Budget Management
+import BudgetLinesPage from "./pages/BudgetLinesPage";
+import BudgetReportPage from "./pages/BudgetReportPage";
+
+// HR
+import HRDepartmentsPage from "./pages/HRDepartmentsPage";
+import HRPositionsPage from "./pages/HRPositionsPage";
+
+// MyHR
+import MyHRProfilePage from "./pages/MyHRProfilePage";
+import MyHRLeavePage from "./pages/MyHRLeavePage";
+import MyHRTimesheetPage from "./pages/MyHRTimesheetPage";
+import MyHRExpensePage from "./pages/MyHRExpensePage";
+
+// Expense Management
+import ExpenseReportPage from "./pages/ExpenseReportPage";
+import ExpenseApprovalPage from "./pages/ExpenseApprovalPage";
+
+// Timesheet Management
+import InputTimesheetPage from "./pages/InputTimesheetPage";
+import ValidateTimesheetPage from "./pages/ValidateTimesheetPage";
+
+// Recruitment
+import JobPositionsPage from "./pages/JobPositionsPage";
+import CandidatesPage from "./pages/CandidatesPage";
+import RecruitmentStagesPage from "./pages/RecruitmentStagesPage";
+
+// Contracts
+import EmployeeContractsPage from "./pages/EmployeeContractsPage";
+import CustomerContractsPage from "./pages/CustomerContractsPage";
+
+// BPM
+import ActiveProcessesPage from "./pages/ActiveProcessesPage";
+import ProcessHistoryPage from "./pages/ProcessHistoryPage";
+
+// Application Config
+import AppsManagementPage from "./pages/AppsManagementPage";
+import GeneralDataPage from "./pages/GeneralDataPage";
+import ConfigurationPage from "./pages/ConfigurationPage";
+
+// Administration
+import AdminTechnicalPage from "./pages/AdminTechnicalPage";
+import AdminBatchesPage from "./pages/AdminBatchesPage";
+import AdminMessagePage from "./pages/AdminMessagePage";
+import AdminSecurityPage from "./pages/AdminSecurityPage";
+
+import MainLayout from "./components/MainLayout";
+
+export const router = createBrowserRouter([
+  {
+    path: "/login",
+    Component: LoginPage,
+  },
+  {
+    path: "/",
+    Component: MainLayout,
+    children: [
+      { index: true, Component: DashboardPage },
+
+      // Teamwork
+      { path: "teamwork/calendar", Component: TeamworkCalendarPage },
+      { path: "teamwork/documents", Component: TeamworkDocumentsPage },
+
+      // CRM
+      { path: "crm/leads", Component: CRMLeadsPage },
+      { path: "crm/pipeline", Component: CRMPipelinePage },
+      { path: "crm/customers", Component: CRMCustomersPage },
+      { path: "crm/activities", Component: CRMActivitiesPage },
+
+      // Sales
+      { path: "sales/quotation", Component: SalesQuotationPage },
+      { path: "sales/order", Component: SalesOrderPage },
+      { path: "sales/report", Component: SalesReportPage },
+
+      // Purchases
+      { path: "purchases/request", Component: PurchaseRequestPage },
+      { path: "purchases/order", Component: PurchaseOrderPage },
+      { path: "purchases/supplier", Component: SupplierPage },
+
+      // Invoicing
+      { path: "invoicing/customer", Component: CustomerInvoicePage },
+      { path: "invoicing/supplier", Component: SupplierInvoicePage },
+      { path: "invoicing/payment", Component: PaymentPage },
+
+      // Accounting
+      { path: "accounting/journal", Component: JournalEntriesPage },
+      { path: "accounting/chart", Component: ChartOfAccountsPage },
+      { path: "accounting/report", Component: FinancialReportPage },
+      { path: "accounting/budget", Component: AccountingBudgetPage },
+
+      // Budget Management
+      { path: "budget/lines", Component: BudgetLinesPage },
+      { path: "budget/report", Component: BudgetReportPage },
+
+      // Project Management
+      { path: "projects", Component: ProjectManagementPage },
+
+      // HR
+      { path: "hrm/employees", Component: HRMEmployeeListPage },
+      { path: "hrm/departments", Component: HRDepartmentsPage },
+      { path: "hrm/positions", Component: HRPositionsPage },
+
+      // MyHR
+      { path: "myhr/profile", Component: MyHRProfilePage },
+      { path: "myhr/leave", Component: MyHRLeavePage },
+      { path: "myhr/timesheet", Component: MyHRTimesheetPage },
+      { path: "myhr/expense", Component: MyHRExpensePage },
+
+      // Leave Management
+      { path: "leave", Component: LeaveManagementPage },
+
+      // Expense Management
+      { path: "expense/report", Component: ExpenseReportPage },
+      { path: "expense/approval", Component: ExpenseApprovalPage },
+
+      // Timesheet Management
+      { path: "timesheet/input", Component: InputTimesheetPage },
+      { path: "timesheet/validate", Component: ValidateTimesheetPage },
+
+      // Recruitment
+      { path: "recruitment/positions", Component: JobPositionsPage },
+      { path: "recruitment/candidates", Component: CandidatesPage },
+      { path: "recruitment/stages", Component: RecruitmentStagesPage },
+
+      // Contracts
+      { path: "contracts/employee", Component: EmployeeContractsPage },
+      { path: "contracts/customer", Component: CustomerContractsPage },
+
+      // BPM
+      { path: "bpm/active", Component: ActiveProcessesPage },
+      { path: "bpm/studio", Component: BPMWorkflowStudioPage },
+      { path: "bpm/approval", Component: BPMApprovalInboxPage },
+      { path: "bpm/history", Component: ProcessHistoryPage },
+
+      // Application Config
+      { path: "config/apps", Component: AppsManagementPage },
+      { path: "config/general", Component: GeneralDataPage },
+      { path: "users", Component: UserManagementPage },
+      { path: "config/settings", Component: ConfigurationPage },
+
+      // Administration
+      { path: "admin/technical", Component: AdminTechnicalPage },
+      { path: "admin/batches", Component: AdminBatchesPage },
+      { path: "admin/message", Component: AdminMessagePage },
+      { path: "admin/security", Component: AdminSecurityPage },
+
+      // Notifications
+      { path: "notifications", Component: NotificationCenterPage },
+    ],
+  },
+]);

@@ -1,0 +1,33 @@
+services:
+  # Backend API Service
+  - type: web
+    name: erpbpm-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    region: singapore
+    branch: main
+    healthCheckPath: /api/health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_URLS
+        value: http://+:5000
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+      - key: JwtSettings__Secret
+        generateValue: true
+      - key: JwtSettings__Issuer
+        value: ERPBPM.API
+      - key: JwtSettings__Audience
+        value: ERPBPM.Client
+      - key: JwtSettings__ExpiryMinutes
+        value: 60
+
+  # PostgreSQL Database
+  - type: pserv
+    name: erpbpm-postgres
+    env: docker
+    plan: free
+    region: singapore

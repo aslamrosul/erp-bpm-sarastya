@@ -1,0 +1,32 @@
+# Backend (.NET)
+backend/src/**/bin/
+backend/src/**/obj/
+backend/src/**/*.user
+backend/src/**/*.suo
+backend/src/.vs/
+
+# Frontend Web (React)
+frontend-web/node_modules/
+frontend-web/dist/
+frontend-web/.env.local
+
+# Frontend Mobile (Flutter)
+frontend-mobile/.dart_tool/
+frontend-mobile/.flutter-plugins
+frontend-mobile/.flutter-plugins-dependencies
+frontend-mobile/.packages
+frontend-mobile/build/
+frontend-mobile/ios/Pods/
+frontend-mobile/ios/.symlinks/
+frontend-mobile/android/.gradle/
+frontend-mobile/android/app/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
