@@ -59,7 +59,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   }
 
   Future<void> checkAuth() async {
-    final isAuth = await _authService.isAuthenticated();
+    final isAuth = await _authService.isLoggedIn();
     state = state.copyWith(isAuthenticated: isAuth);
   }
 }

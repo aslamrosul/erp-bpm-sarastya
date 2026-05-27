@@ -42,4 +42,19 @@ class StorageService {
   Future<bool> clear() async {
     return await _prefs.clear();
   }
+
+  // Token Management (convenience methods)
+  static const String _tokenKey = 'auth_token';
+
+  Future<void> saveToken(String token) async {
+    await saveSecure(_tokenKey, token);
+  }
+
+  Future<String?> getToken() async {
+    return await getSecure(_tokenKey);
+  }
+
+  Future<void> clearToken() async {
+    await deleteSecure(_tokenKey);
+  }
 }

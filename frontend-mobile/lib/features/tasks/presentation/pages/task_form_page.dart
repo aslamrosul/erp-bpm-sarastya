@@ -192,7 +192,7 @@ class _TaskFormPageState extends State<TaskFormPage> {
                   ),
                   const SizedBox(height: 16),
                   DropdownButtonFormField<String>(
-                    value: _selectedProjectId,
+                    initialValue: _selectedProjectId,
                     decoration: const InputDecoration(
                       labelText: 'Project',
                       border: OutlineInputBorder(),
@@ -208,7 +208,7 @@ class _TaskFormPageState extends State<TaskFormPage> {
                   ),
                   const SizedBox(height: 16),
                   DropdownButtonFormField<String>(
-                    value: _status,
+                    initialValue: _status,
                     decoration: const InputDecoration(
                       labelText: 'Status',
                       border: OutlineInputBorder(),
@@ -222,7 +222,7 @@ class _TaskFormPageState extends State<TaskFormPage> {
                   ),
                   const SizedBox(height: 16),
                   DropdownButtonFormField<String>(
-                    value: _priority,
+                    initialValue: _priority,
                     decoration: const InputDecoration(
                       labelText: 'Priority',
                       border: OutlineInputBorder(),

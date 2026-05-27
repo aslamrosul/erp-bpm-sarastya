@@ -1,32 +1,99 @@
+# =========================
+# ENV / SECRETS
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
 # Backend (.NET)
+# =========================
 backend/src/**/bin/
 backend/src/**/obj/
 backend/src/**/*.user
 backend/src/**/*.suo
 backend/src/.vs/
 
-# Frontend Web (React)
+# Logs
+backend/src/**/*.log
+
+# Publish
+backend/publish/
+
+# =========================
+# Frontend Web (React/Vite)
+# =========================
 frontend-web/node_modules/
 frontend-web/dist/
+frontend-web/build/
 frontend-web/.env.local
+frontend-web/.vite/
+frontend-web/coverage/
 
+# =========================
 # Frontend Mobile (Flutter)
+# =========================
 frontend-mobile/.dart_tool/
 frontend-mobile/.flutter-plugins
 frontend-mobile/.flutter-plugins-dependencies
 frontend-mobile/.packages
+frontend-mobile/.pub-cache/
+frontend-mobile/.pub/
+
 frontend-mobile/build/
-frontend-mobile/ios/Pods/
-frontend-mobile/ios/.symlinks/
+
+# Flutter generated
+frontend-mobile/flutter_*.png
+
+# Android
 frontend-mobile/android/.gradle/
 frontend-mobile/android/app/build/
+frontend-mobile/android/local.properties/
+frontend-mobile/android/key.properties/
 
+# iOS
+frontend-mobile/ios/Pods/
+frontend-mobile/ios/.symlinks/
+frontend-mobile/ios/Flutter/Flutter.framework
+frontend-mobile/ios/Flutter/Flutter.podspec
+
+# =========================
 # IDE
+# =========================
 .vscode/
 .idea/
 *.swp
 *.swo
 
+# Visual Studio Code test
+.history/
+
+# =========================
 # OS
+# =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Temp / Cache
+# =========================
+tmp/
+temp/
+.cache/
+
+# =========================
+# Database
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# Docker
+# =========================
+*.tar

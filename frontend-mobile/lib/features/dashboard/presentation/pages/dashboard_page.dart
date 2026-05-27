@@ -8,7 +8,7 @@ import '../../../tasks/presentation/pages/task_form_page.dart';
 import '../../../reports/presentation/pages/reports_page.dart';
 
 class DashboardPage extends StatefulWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+  const DashboardPage({super.key});
 
   @override
   State<DashboardPage> createState() => _DashboardPageState();

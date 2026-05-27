@@ -8,7 +8,7 @@ import 'task_form_page.dart';
 class TasksPage extends StatefulWidget {
   final String? projectId;
   
-  const TasksPage({Key? key, this.projectId}) : super(key: key);
+  const TasksPage({super.key, this.projectId});
 
   @override
   State<TasksPage> createState() => _TasksPageState();

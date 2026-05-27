@@ -5,7 +5,7 @@ import '../bloc/auth_event.dart';
 import '../bloc/auth_state.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +101,7 @@ class ProfilePage extends StatelessWidget {
                     trailing: Switch(
                       value: false,
                       onChanged: (value) {},
-                      activeColor: const Color(0xFF7B2D8B),
+                      activeThumbColor: const Color(0xFF7B2D8B),
                     ),
                   ),
                   _buildMenuItem(
@@ -154,7 +154,7 @@ class ProfilePage extends StatelessWidget {
       leading: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: const Color(0xFF7B2D8B).withOpacity(0.1),
+          color: const Color(0xFF7B2D8B).withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Icon(icon, color: const Color(0xFF7B2D8B)),

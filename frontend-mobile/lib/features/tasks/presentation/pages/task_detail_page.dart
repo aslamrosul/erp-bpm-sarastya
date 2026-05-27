@@ -8,7 +8,7 @@ import 'task_form_page.dart';
 class TaskDetailPage extends StatelessWidget {
   final Task task;
 
-  const TaskDetailPage({Key? key, required this.task}) : super(key: key);
+  const TaskDetailPage({super.key, required this.task});
 
   Future<void> _deleteTask(BuildContext context) async {
     final confirmed = await showDialog<bool>(
@@ -178,7 +178,7 @@ class TaskDetailPage extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.flag,
                           color: Colors.white,
                           size: 16,

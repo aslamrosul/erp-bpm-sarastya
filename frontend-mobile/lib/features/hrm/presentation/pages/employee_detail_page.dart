@@ -8,7 +8,7 @@ import 'employee_form_page.dart';
 class EmployeeDetailPage extends StatelessWidget {
   final Employee employee;
 
-  const EmployeeDetailPage({Key? key, required this.employee}) : super(key: key);
+  const EmployeeDetailPage({super.key, required this.employee});
 
   Future<void> _deleteEmployee(BuildContext context) async {
     final confirmed = await showDialog<bool>(
@@ -124,8 +124,8 @@ class EmployeeDetailPage extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: employee.status.toLowerCase() == 'active'
-                          ? Colors.green.withOpacity(0.2)
-                          : Colors.red.withOpacity(0.2),
+                          ? Colors.green.withValues(alpha: 0.2)
+                          : Colors.red.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
@@ -222,7 +222,7 @@ class EmployeeDetailPage extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: const Color(0xFF7B2D8B).withOpacity(0.1),
+              color: const Color(0xFF7B2D8B).withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(icon, color: const Color(0xFF7B2D8B)),

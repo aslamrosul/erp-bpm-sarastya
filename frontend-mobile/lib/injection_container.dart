@@ -1,5 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'core/network/api_client.dart';
+import 'core/network/dio_client.dart';
 import 'core/services/auth_service.dart';
 import 'core/services/storage_service.dart';
 import 'features/auth/data/auth_repository.dart';
@@ -16,13 +18,15 @@ Future<void> init() async {
   await storageService.init();
   sl.registerSingleton<StorageService>(storageService);
   
-  sl.registerLazySingleton(() => ApiClient());
-  sl.registerLazySingleton(() => AuthService(sl(), sl()));
+  // Network
+  sl.registerLazySingleton<Dio>(() => DioClient.createDio());
+  sl.registerLazySingleton(() => ApiClient(sl<Dio>(), sl<StorageService>()));
+  sl.registerLazySingleton(() => AuthService(sl<Dio>(), sl<StorageService>()));
 
   // Repositories
-  sl.registerLazySingleton(() => AuthRepository(sl()));
-  sl.registerLazySingleton(() => ProjectRepository(sl()));
-  sl.registerLazySingleton(() => TaskRepository(sl()));
-  sl.registerLazySingleton(() => DashboardRepository(sl()));
-  sl.registerLazySingleton(() => WorkflowRepository(sl()));
+  sl.registerLazySingleton(() => AuthRepository(sl<ApiClient>()));
+  sl.registerLazySingleton(() => ProjectRepository(sl<ApiClient>()));
+  sl.registerLazySingleton(() => TaskRepository(sl<ApiClient>()));
+  sl.registerLazySingleton(() => DashboardRepository(sl<ApiClient>()));
+  sl.registerLazySingleton(() => WorkflowRepository(sl<ApiClient>()));
 }

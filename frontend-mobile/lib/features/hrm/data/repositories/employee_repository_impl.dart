@@ -16,9 +16,9 @@ class EmployeeRepositoryImpl implements EmployeeRepository {
       final employees = await remoteDataSource.getEmployees();
       return Right(employees);
     } on ServerException {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 }

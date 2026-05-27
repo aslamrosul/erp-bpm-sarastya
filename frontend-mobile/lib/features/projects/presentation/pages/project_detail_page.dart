@@ -12,7 +12,7 @@ import '../../../tasks/domain/entities/task.dart';
 class ProjectDetailPage extends StatefulWidget {
   final Project project;
 
-  const ProjectDetailPage({Key? key, required this.project}) : super(key: key);
+  const ProjectDetailPage({super.key, required this.project});
 
   @override
   State<ProjectDetailPage> createState() => _ProjectDetailPageState();

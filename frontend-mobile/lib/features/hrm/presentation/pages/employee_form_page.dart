@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
 import '../../../../core/di/injection_container.dart' as di;
 import '../../data/datasources/employee_remote_datasource.dart';
 import '../../domain/entities/employee.dart';
@@ -157,7 +156,7 @@ class _EmployeeFormPageState extends State<EmployeeFormPage> {
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: _status,
+              initialValue: _status,
               decoration: const InputDecoration(
                 labelText: 'Status',
                 border: OutlineInputBorder(),

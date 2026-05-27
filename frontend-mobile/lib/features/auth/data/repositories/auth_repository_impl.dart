@@ -41,7 +41,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await localDataSource.clearAuth();
       return const Right(null);
     } catch (e) {
-      return Left(CacheFailure());
+      return const Left(CacheFailure());
     }
   }
 
@@ -52,10 +52,10 @@ class AuthRepositoryImpl implements AuthRepository {
       if (user != null) {
         return Right(user);
       } else {
-        return Left(CacheFailure());
+        return const Left(CacheFailure());
       }
     } catch (e) {
-      return Left(CacheFailure());
+      return const Left(CacheFailure());
     }
   }
 

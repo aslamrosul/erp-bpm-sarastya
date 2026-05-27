@@ -6,7 +6,7 @@ import 'project_detail_page.dart';
 import 'project_form_page.dart';
 
 class ProjectsPage extends StatefulWidget {
-  const ProjectsPage({Key? key}) : super(key: key);
+  const ProjectsPage({super.key});
 
   @override
   State<ProjectsPage> createState() => _ProjectsPageState();
@@ -147,7 +147,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
                                         ),
                                         decoration: BoxDecoration(
                                           color: _getStatusColor(project.status)
-                                              .withOpacity(0.1),
+                                              .withValues(alpha: 0.1),
                                           borderRadius:
                                               BorderRadius.circular(12),
                                         ),

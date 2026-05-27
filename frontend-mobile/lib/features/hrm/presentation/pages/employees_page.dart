@@ -8,7 +8,7 @@ import 'employee_detail_page.dart';
 import 'employee_form_page.dart';
 
 class EmployeesPage extends StatelessWidget {
-  const EmployeesPage({Key? key}) : super(key: key);
+  const EmployeesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class EmployeesPage extends StatelessWidget {
 }
 
 class EmployeesView extends StatefulWidget {
-  const EmployeesView({Key? key}) : super(key: key);
+  const EmployeesView({super.key});
 
   @override
   State<EmployeesView> createState() => _EmployeesViewState();
@@ -177,8 +177,8 @@ class _EmployeesViewState extends State<EmployeesView> {
                               ),
                               decoration: BoxDecoration(
                                 color: employee.status.toLowerCase() == 'active'
-                                    ? Colors.green.withOpacity(0.1)
-                                    : Colors.red.withOpacity(0.1),
+                                    ? Colors.green.withValues(alpha: 0.1)
+                                    : Colors.red.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: Text(

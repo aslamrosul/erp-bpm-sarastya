@@ -54,7 +54,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.UseHttpsRedirection();
-app.UseCors("AllowAll");
+app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 

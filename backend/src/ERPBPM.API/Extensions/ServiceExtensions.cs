@@ -12,13 +12,27 @@ public static class ServiceExtensions
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         // CORS
+        var allowedOrigins = Environment
+            .GetEnvironmentVariable("ALLOWED_ORIGINS")?
+            .Split(",", StringSplitOptions.RemoveEmptyEntries);
+
         services.AddCors(options =>
         {
-            options.AddPolicy("AllowAll", builder =>
+            options.AddPolicy("CorsPolicy", policy =>
             {
-                builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader();
+                if (allowedOrigins != null && allowedOrigins.Length > 0)
+                {
+                    policy.WithOrigins(allowedOrigins)
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials();
+                }
+                else
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                }
             });
         });
 

@@ -4,7 +4,7 @@ import '../../../dashboard/data/datasources/dashboard_remote_datasource.dart';
 import '../../../dashboard/domain/entities/dashboard_stats.dart';
 
 class ReportsPage extends StatefulWidget {
-  const ReportsPage({Key? key}) : super(key: key);
+  const ReportsPage({super.key});
 
   @override
   State<ReportsPage> createState() => _ReportsPageState();
